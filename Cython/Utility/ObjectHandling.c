@@ -2181,13 +2181,13 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_FastCallDict(PyObject *func, PyObj
     #if CYTHON_VECTORCALL
     vectorcallfunc f = _PyVectorcall_Function(func);
     if (f) {
-        return f(func, args, nargs, kwargs);
+        return f(func, args, (size_t)nargs, kwargs);
     }
     #elif defined(__Pyx_CyFunction_USED) && CYTHON_BACKPORT_VECTORCALL
     // exclude fused functions for now
     if (__Pyx_CyFunction_CheckExact(func)) {
         __pyx_vectorcallfunc f = __Pyx_CyFunction_func_vectorcall(func);
-        if (f) return f(func, args, nargs, kwargs);
+        if (f) return f(func, args, (size_t)nargs, kwargs);
     }
     #endif
 
@@ -2609,7 +2609,7 @@ static PyObject *__Pyx_PyVectorcall_FastCallDict_kw(PyObject *func, __pyx_vector
     }
 
     // The actual call
-    res = vc(func, newargs, nargs, kwnames);
+    res = vc(func, newargs, (size_t)nargs, kwnames);
 
 cleanup:
     Py_DECREF(kwnames);
@@ -2622,7 +2622,7 @@ cleanup:
 static CYTHON_INLINE PyObject *__Pyx_PyVectorcall_FastCallDict(PyObject *func, __pyx_vectorcallfunc vc, PyObject *const *args, Py_ssize_t nargs, PyObject *kw)
 {
     if (likely(kw == NULL) || PyDict_GET_SIZE(kw) == 0) {
-        return vc(func, args, nargs, NULL);
+        return vc(func, args, (size_t)nargs, NULL);
     }
     return __Pyx_PyVectorcall_FastCallDict_kw(func, vc, args, nargs, kw);
 }

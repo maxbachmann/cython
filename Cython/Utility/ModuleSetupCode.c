@@ -553,7 +553,7 @@ class __Pyx_FakeReference {
 #if CYTHON_VECTORCALL
   #define __pyx_vectorcallfunc vectorcallfunc
   #define __Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET  PY_VECTORCALL_ARGUMENTS_OFFSET
-  #define __Pyx_PyVectorcall_NARGS(n)  PyVectorcall_NARGS(n)
+  #define __Pyx_PyVectorcall_NARGS(n)  PyVectorcall_NARGS((size_t)n)
 #elif CYTHON_BACKPORT_VECTORCALL
   typedef PyObject *(*__pyx_vectorcallfunc)(PyObject *callable, PyObject *const *args,
                                             size_t nargsf, PyObject *kwnames);
