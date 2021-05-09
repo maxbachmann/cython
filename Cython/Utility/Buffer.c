@@ -377,7 +377,11 @@ typedef struct { char c; void *x; } __Pyx_st_void_p;
 typedef struct { char c; PY_LONG_LONG x; } __Pyx_st_longlong;
 #endif
 
+<<<<<<< HEAD
 static size_t __Pyx_BufFmt_TypeCharToAlignment(char ch, int is_complex) {
+=======
+static size_t __Pyx_BufFmt_TypeCharToAlignment(char ch, CYTHON_UNUSED int is_complex) {
+>>>>>>> 3d836b1cf (silence unused warning on MSVC)
   CYTHON_UNUSED_VAR(is_complex);
   switch (ch) {
     case '?': case 'c': case 'b': case 'B': case 's': case 'p': return 1;
@@ -412,7 +416,11 @@ typedef struct { void *x; char c; } __Pyx_pad_void_p;
 typedef struct { PY_LONG_LONG x; char c; } __Pyx_pad_longlong;
 #endif
 
+<<<<<<< HEAD
 static size_t __Pyx_BufFmt_TypeCharToPadding(char ch, int is_complex) {
+=======
+static size_t __Pyx_BufFmt_TypeCharToPadding(char ch, CYTHON_UNUSED int is_complex) {
+>>>>>>> 3d836b1cf (silence unused warning on MSVC)
   CYTHON_UNUSED_VAR(is_complex);
   switch (ch) {
     case '?': case 'c': case 'b': case 'B': case 's': case 'p': return 1;

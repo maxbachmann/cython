@@ -127,7 +127,13 @@ static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject 
 // has changed quite a lot between the two versions.
 
 #if PY_MAJOR_VERSION < 3
+<<<<<<< HEAD
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
+=======
+static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb,
+                        CYTHON_UNUSED PyObject *cause) {
+    CYTHON_UNUSED_VAR(cause);
+>>>>>>> 3d836b1cf (silence unused warning on MSVC)
     __Pyx_PyThreadState_declare
     CYTHON_UNUSED_VAR(cause);
     /* 'cause' is only used in Py3 */

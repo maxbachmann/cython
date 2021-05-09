@@ -250,6 +250,7 @@ __Pyx_CyFunction_get_closure(__pyx_CyFunctionObject *op, void *context)
 static PyObject *
 __Pyx_CyFunction_get_code(__pyx_CyFunctionObject *op, void *context)
 {
+    CYTHON_UNUSED_VAR(context);
     PyObject* result = (op->func_code) ? op->func_code : Py_None;
     CYTHON_UNUSED_VAR(context);
     Py_INCREF(result);
@@ -1371,6 +1372,7 @@ bad:
 static PyObject *
 __Pyx_FusedFunction_get_self(__pyx_FusedFunctionObject *m, void *closure)
 {
+    CYTHON_UNUSED_VAR(closure);
     PyObject *self = m->self;
     CYTHON_UNUSED_VAR(closure);
     if (unlikely(!self)) {
