@@ -1325,7 +1325,6 @@ static void __Pyx_Coroutine_del(PyObject *self) {
 static PyObject *
 __Pyx_Coroutine_get_name(__pyx_CoroutineObject *self, void *context)
 {
-    CYTHON_UNUSED_VAR(context);
     PyObject *name = self->gi_name;
     CYTHON_UNUSED_VAR(context);
     // avoid NULL pointer dereference during garbage collection
@@ -1356,7 +1355,6 @@ __Pyx_Coroutine_set_name(__pyx_CoroutineObject *self, PyObject *value, void *con
 static PyObject *
 __Pyx_Coroutine_get_qualname(__pyx_CoroutineObject *self, void *context)
 {
-    CYTHON_UNUSED_VAR(context);
     PyObject *name = self->gi_qualname;
     CYTHON_UNUSED_VAR(context);
     // avoid NULL pointer dereference during garbage collection
@@ -1387,7 +1385,6 @@ __Pyx_Coroutine_set_qualname(__pyx_CoroutineObject *self, PyObject *value, void 
 static PyObject *
 __Pyx_Coroutine_get_frame(__pyx_CoroutineObject *self, void *context)
 {
-    CYTHON_UNUSED_VAR(context);
     PyObject *frame = self->gi_frame;
     CYTHON_UNUSED_VAR(context);
     if (!frame) {

@@ -128,12 +128,16 @@ static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject 
 
 #if PY_MAJOR_VERSION < 3
 <<<<<<< HEAD
+<<<<<<< HEAD
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
 =======
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb,
                         CYTHON_UNUSED PyObject *cause) {
     CYTHON_UNUSED_VAR(cause);
 >>>>>>> 3d836b1cf (silence unused warning on MSVC)
+=======
+static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
+>>>>>>> 2cab425a4 (remove CYTHON_UNUSED identifier)
     __Pyx_PyThreadState_declare
     CYTHON_UNUSED_VAR(cause);
     /* 'cause' is only used in Py3 */

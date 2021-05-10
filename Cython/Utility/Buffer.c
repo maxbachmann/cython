@@ -378,10 +378,14 @@ typedef struct { char c; PY_LONG_LONG x; } __Pyx_st_longlong;
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static size_t __Pyx_BufFmt_TypeCharToAlignment(char ch, int is_complex) {
 =======
 static size_t __Pyx_BufFmt_TypeCharToAlignment(char ch, CYTHON_UNUSED int is_complex) {
 >>>>>>> 3d836b1cf (silence unused warning on MSVC)
+=======
+static size_t __Pyx_BufFmt_TypeCharToAlignment(char ch, int is_complex) {
+>>>>>>> 2cab425a4 (remove CYTHON_UNUSED identifier)
   CYTHON_UNUSED_VAR(is_complex);
   switch (ch) {
     case '?': case 'c': case 'b': case 'B': case 's': case 'p': return 1;
@@ -417,10 +421,14 @@ typedef struct { PY_LONG_LONG x; char c; } __Pyx_pad_longlong;
 #endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 static size_t __Pyx_BufFmt_TypeCharToPadding(char ch, int is_complex) {
 =======
 static size_t __Pyx_BufFmt_TypeCharToPadding(char ch, CYTHON_UNUSED int is_complex) {
 >>>>>>> 3d836b1cf (silence unused warning on MSVC)
+=======
+static size_t __Pyx_BufFmt_TypeCharToPadding(char ch, int is_complex) {
+>>>>>>> 2cab425a4 (remove CYTHON_UNUSED identifier)
   CYTHON_UNUSED_VAR(is_complex);
   switch (ch) {
     case '?': case 'c': case 'b': case 'B': case 's': case 'p': return 1;
